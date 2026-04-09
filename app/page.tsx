@@ -7,11 +7,11 @@ export default function Home() {
         <section className="rounded-[1.8rem] border border-white/80 bg-white/82 px-5 py-4 shadow-[0_18px_60px_rgba(18,38,63,0.08)] backdrop-blur">
           <div className="grid gap-4 lg:grid-cols-[1fr_auto_1fr] lg:items-center">
             <div className="flex items-center gap-3">
-              <div className="flex h-11 w-11 items-center justify-center rounded-[1.1rem] bg-[linear-gradient(160deg,#020617_0%,#0f172a_100%)] text-sm font-bold uppercase tracking-[0.22em] text-white shadow-[0_12px_24px_rgba(15,23,42,0.18)]">
+              <div className="flex h-11 w-11 items-center justify-center rounded-[0.8rem] bg-[linear-gradient(160deg,#020617_0%,#0f172a_100%)] text-sm font-bold uppercase tracking-[0.22em] text-white shadow-[0_12px_24px_rgba(15,23,42,0.18)]">
                 MB
               </div>
               <div className="min-w-0">
-                <p className="text-lg font-semibold tracking-[0.14em] text-slate-950 sm:text-xl">
+                <p className="text-lg font-bold text-slate-950 sm:text-xl">
                   MAHESH BHATT
                 </p>
                 <p className="mt-0.5 text-[11px] font-medium uppercase tracking-[0.24em] text-slate-500">
@@ -26,12 +26,20 @@ export default function Home() {
                 rel="noopener noreferrer"
                 target="_blank"
               >
-                <svg
-                  aria-hidden="true"
-                  className="h-4 w-4 fill-current"
-                  viewBox="0 0 24 24"
+
+              <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlSpace="preserve"
+                  width={20}
+                  height={20}
+                  viewBox="0 0 382 382"
                 >
-                  <path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.11 1 2.48 1h.02C3.87 1 4.98 2.12 4.98 3.5ZM.5 8h4V24h-4V8ZM8 8h3.83v2.19h.05c.53-1.01 1.84-2.19 3.79-2.19 4.05 0 4.8 2.67 4.8 6.13V24h-4v-7.01c0-1.67-.03-3.82-2.33-3.82-2.33 0-2.69 1.82-2.69 3.7V24H8V8Z" />
+                  <path
+                    d="M347.445 0H34.555C15.471 0 0 15.471 0 34.555v312.889C0 366.529 15.471 382 34.555 382h312.889C366.529 382 382 366.529 382 347.444V34.555C382 15.471 366.529 0 347.445 0zM118.207 329.844c0 5.554-4.502 10.056-10.056 10.056H65.345c-5.554 0-10.056-4.502-10.056-10.056V150.403c0-5.554 4.502-10.056 10.056-10.056h42.806c5.554 0 10.056 4.502 10.056 10.056v179.441zM86.748 123.432c-22.459 0-40.666-18.207-40.666-40.666S64.289 42.1 86.748 42.1s40.666 18.207 40.666 40.666-18.206 40.666-40.666 40.666zM341.91 330.654a9.247 9.247 0 0 1-9.246 9.246H286.73a9.247 9.247 0 0 1-9.246-9.246v-84.168c0-12.556 3.683-55.021-32.813-55.021-28.309 0-34.051 29.066-35.204 42.11v97.079a9.246 9.246 0 0 1-9.246 9.246h-44.426a9.247 9.247 0 0 1-9.246-9.246V149.593a9.247 9.247 0 0 1 9.246-9.246h44.426a9.247 9.247 0 0 1 9.246 9.246v15.655c10.497-15.753 26.097-27.912 59.312-27.912 73.552 0 73.131 68.716 73.131 106.472v86.846z"
+                    style={{
+                      fill: "#0077b7",
+                    }}
+                  />
                 </svg>
                 Connect with me
               </a>
