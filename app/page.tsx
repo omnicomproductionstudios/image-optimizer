@@ -44,58 +44,17 @@ export default function Home() {
         </section>
 
         <section className="overflow-hidden rounded-[2rem] border border-white/70 bg-white/80 p-7 shadow-[0_26px_70px_rgba(18,38,63,0.1)] backdrop-blur md:p-10">
-          <div className="grid gap-8 lg:grid-cols-[1.15fr_0.85fr] lg:items-end">
-            <div className="space-y-6">
-              <div className="inline-flex items-center gap-2 rounded-full border border-sky-200/70 bg-sky-50 px-4 py-2 text-xs font-semibold uppercase tracking-[0.28em] text-sky-700">
-                Clean, local, zero-upload compression
-              </div>
-              <div className="space-y-4">
-                <h1 className="max-w-3xl text-4xl font-semibold tracking-[-0.05em] text-slate-950 sm:text-5xl lg:text-6xl">
-                  Compress images. Keep the quality.
-                </h1>
-                <p className="max-w-2xl text-base leading-8 text-slate-600 sm:text-lg">
-                  PNG, JPG, and WebP. No upload required.
-                </p>
-              </div>
-              <div className="grid gap-3 sm:grid-cols-3">
-                <div className="rounded-[1.4rem] border border-slate-200/70 bg-slate-50/80 p-4">
-                  <p className="text-xs uppercase tracking-[0.24em] text-slate-500">
-                    Private
-                  </p>
-                  <p className="mt-2 text-sm leading-6 text-slate-700">Runs locally</p>
-                </div>
-                <div className="rounded-[1.4rem] border border-slate-200/70 bg-slate-50/80 p-4">
-                  <p className="text-xs uppercase tracking-[0.24em] text-slate-500">
-                    Flexible
-                  </p>
-                  <p className="mt-2 text-sm leading-6 text-slate-700">Resize and tune</p>
-                </div>
-                <div className="rounded-[1.4rem] border border-slate-200/70 bg-slate-50/80 p-4">
-                  <p className="text-xs uppercase tracking-[0.24em] text-slate-500">
-                    Batch-ready
-                  </p>
-                  <p className="mt-2 text-sm leading-6 text-slate-700">ZIP export</p>
-                </div>
-              </div>
+          <div className="space-y-5">
+            <div className="inline-flex items-center gap-2 rounded-full border border-sky-200/70 bg-sky-50 px-4 py-2 text-xs font-semibold uppercase tracking-[0.28em] text-sky-700">
+              Clean, local, zero-upload compression
             </div>
-
-            <div className="rounded-[1.75rem] bg-[linear-gradient(160deg,#0f172a_0%,#10294b_54%,#164e63_100%)] p-6 text-slate-50 shadow-[inset_0_1px_0_rgba(255,255,255,0.08)]">
-              <div className="rounded-[1.4rem] border border-white/10 bg-white/5 p-5">
-                <p className="text-sm uppercase tracking-[0.24em] text-slate-300">
-                  Highlights
-                </p>
-                <div className="mt-4 space-y-4">
-                  <div>
-                    <p className="text-lg font-medium">Fast batches</p>
-                  </div>
-                  <div>
-                    <p className="text-lg font-medium">Clean previews</p>
-                  </div>
-                  <div>
-                    <p className="text-lg font-medium">One-click export</p>
-                  </div>
-                </div>
-              </div>
+            <div className="space-y-4">
+              <h1 className="max-w-4xl text-4xl font-semibold tracking-[-0.05em] text-slate-950 sm:text-5xl lg:text-6xl">
+                Compress images. Keep the quality.
+              </h1>
+              <p className="max-w-2xl text-base leading-8 text-slate-600 sm:text-lg">
+                PNG, JPG, and WebP. No upload required.
+              </p>
             </div>
           </div>
         </section>
