@@ -345,10 +345,10 @@ export default function ImageOptimizer() {
 
   return (
     <section className="grid gap-6 lg:grid-cols-[340px_minmax(0,1fr)]">
-      <aside className="rounded-[1.75rem] border border-white/70 bg-white/82 p-5 shadow-[0_16px_50px_rgba(15,23,42,0.08)] backdrop-blur">
+      <aside className="rounded-[1.75rem] border border-white/80 bg-white/84 p-5 shadow-[0_18px_55px_rgba(15,23,42,0.08)] backdrop-blur">
         <div className="space-y-6">
           <div>
-            <p className="text-sm uppercase tracking-[0.24em] text-slate-500">
+            <p className="text-xs uppercase tracking-[0.24em] text-slate-500">
               Controls
             </p>
             <h2 className="mt-2 text-2xl font-semibold tracking-[-0.03em] text-slate-950">
@@ -356,10 +356,10 @@ export default function ImageOptimizer() {
             </h2>
           </div>
 
-          <label className="block space-y-3 rounded-[1.4rem] border border-slate-200/70 bg-slate-50/85 p-4">
+          <label className="block space-y-3 rounded-[1.4rem] border border-slate-200/70 bg-[linear-gradient(180deg,#f8fbff_0%,#f4f8fd_100%)] p-4">
             <div className="flex items-center justify-between text-sm text-slate-700">
               <span>Compression strength</span>
-              <span className="rounded-full bg-white px-3 py-1 font-medium text-slate-900">
+              <span className="rounded-full border border-slate-200/70 bg-white px-3 py-1 font-medium text-slate-900">
                 {quality}%
               </span>
             </div>
@@ -374,10 +374,10 @@ export default function ImageOptimizer() {
             <p className="text-sm leading-6 text-slate-500">Lower = smaller files</p>
           </label>
 
-          <label className="block space-y-3 rounded-[1.4rem] border border-slate-200/70 bg-slate-50/85 p-4">
+          <label className="block space-y-3 rounded-[1.4rem] border border-slate-200/70 bg-[linear-gradient(180deg,#f8fbff_0%,#f4f8fd_100%)] p-4">
             <div className="flex items-center justify-between text-sm text-slate-700">
               <span>Max dimension</span>
-              <span className="rounded-full bg-white px-3 py-1 font-medium text-slate-900">
+              <span className="rounded-full border border-slate-200/70 bg-white px-3 py-1 font-medium text-slate-900">
                 {maxDimension}px
               </span>
             </div>
@@ -393,10 +393,10 @@ export default function ImageOptimizer() {
             <p className="text-sm leading-6 text-slate-500">Resize before export</p>
           </label>
 
-          <fieldset className="space-y-3 rounded-[1.4rem] border border-slate-200/70 bg-slate-50/85 p-4">
+          <fieldset className="space-y-3 rounded-[1.4rem] border border-slate-200/70 bg-[linear-gradient(180deg,#f8fbff_0%,#f4f8fd_100%)] p-4">
             <legend className="text-sm text-slate-700">Output format</legend>
             <div className="grid gap-2">
-              <label className="flex cursor-pointer items-start gap-3 rounded-2xl border border-slate-200 bg-white px-4 py-3">
+              <label className="flex cursor-pointer items-start gap-3 rounded-2xl border border-slate-200/80 bg-white px-4 py-3 shadow-[0_4px_14px_rgba(15,23,42,0.03)]">
                 <input
                   checked={outputFormat === "original"}
                   className="mt-1 accent-sky-600"
@@ -413,7 +413,7 @@ export default function ImageOptimizer() {
                   </span>
                 </span>
               </label>
-              <label className="flex cursor-pointer items-start gap-3 rounded-2xl border border-slate-200 bg-white px-4 py-3">
+              <label className="flex cursor-pointer items-start gap-3 rounded-2xl border border-slate-200/80 bg-white px-4 py-3 shadow-[0_4px_14px_rgba(15,23,42,0.03)]">
                 <input
                   checked={outputFormat === "image/webp"}
                   className="mt-1 accent-sky-600"
@@ -433,22 +433,27 @@ export default function ImageOptimizer() {
             </div>
           </fieldset>
 
-          <div className="rounded-[1.5rem] bg-[linear-gradient(155deg,#0f172a_0%,#172554_100%)] p-5 text-slate-50">
-            <p className="text-sm uppercase tracking-[0.24em] text-slate-300">
-              Session stats
-            </p>
-            <div className="mt-4 grid gap-3 sm:grid-cols-3 lg:grid-cols-1">
-              <div>
+          <div className="overflow-hidden rounded-[1.5rem] border border-slate-800/40 bg-[linear-gradient(160deg,#0b1329_0%,#162447_58%,#155e75_130%)] p-5 text-slate-50 shadow-[0_18px_38px_rgba(15,23,42,0.18)]">
+            <div className="mb-4 flex items-center justify-between">
+              <p className="text-sm uppercase tracking-[0.24em] text-slate-300">
+                Session stats
+              </p>
+              <div className="h-2.5 w-2.5 rounded-full bg-cyan-300 shadow-[0_0_16px_rgba(103,232,249,0.7)]" />
+            </div>
+            <div className="grid gap-3">
+              <div className="rounded-[1.2rem] border border-white/10 bg-white/6 px-4 py-3 backdrop-blur-sm">
                 <p className="text-3xl font-semibold">{items.length}</p>
-                <p className="text-sm text-slate-400">images loaded</p>
+                <p className="mt-1 text-sm text-slate-300">images loaded</p>
               </div>
-              <div>
+              <div className="rounded-[1.2rem] border border-white/10 bg-white/6 px-4 py-3 backdrop-blur-sm">
                 <p className="text-3xl font-semibold">{formatBytes(totalOriginal)}</p>
-                <p className="text-sm text-slate-400">original total</p>
+                <p className="mt-1 text-sm text-slate-300">original total</p>
               </div>
-              <div>
-                <p className="text-3xl font-semibold">{totalSavings.toFixed(0)}%</p>
-                <p className="text-sm text-slate-400">average reduction</p>
+              <div className="rounded-[1.2rem] border border-emerald-300/18 bg-[linear-gradient(180deg,rgba(16,185,129,0.12)_0%,rgba(255,255,255,0.04)_100%)] px-4 py-3">
+                <p className="text-3xl font-semibold text-emerald-300">
+                  {totalSavings.toFixed(0)}%
+                </p>
+                <p className="mt-1 text-sm text-slate-300">average reduction</p>
               </div>
             </div>
           </div>
@@ -457,10 +462,10 @@ export default function ImageOptimizer() {
 
       <div className="space-y-6">
         <section
-          className={`rounded-[1.75rem] border border-dashed p-6 shadow-[0_16px_50px_rgba(15,23,42,0.08)] transition ${
+          className={`rounded-[1.75rem] border border-dashed p-6 shadow-[0_18px_55px_rgba(15,23,42,0.08)] transition ${
             isDragging
-              ? "border-sky-500 bg-sky-50/90"
-              : "border-slate-300 bg-white/82 backdrop-blur"
+              ? "border-sky-500 bg-sky-50/95"
+              : "border-slate-300/90 bg-white/84 backdrop-blur"
           }`}
           onDragEnter={(event) => {
             event.preventDefault();
@@ -479,42 +484,30 @@ export default function ImageOptimizer() {
             void addFiles(event.dataTransfer.files);
           }}
         >
-          <div className="grid gap-6 lg:grid-cols-[1.15fr_0.85fr] lg:items-center">
-            <div className="space-y-3">
-              <p className="text-sm uppercase tracking-[0.24em] text-slate-500">
-                Upload zone
-              </p>
-              <h3 className="text-2xl font-semibold tracking-[-0.04em] text-slate-950">
-                Drop images here
-              </h3>
-              <p className="max-w-2xl text-sm leading-7 text-slate-600">
-                PNG, JPG, WebP
-              </p>
-              <div className="flex flex-wrap gap-2 text-xs font-medium text-slate-500">
-                <span className="rounded-full border border-slate-200 bg-white px-3 py-2">
-                  No upload needed
-                </span>
-                <span className="rounded-full border border-slate-200 bg-white px-3 py-2">
-                  Batch compression
-                </span>
-                <span className="rounded-full border border-slate-200 bg-white px-3 py-2">
-                  ZIP export
-                </span>
+          <div className="rounded-[1.5rem] border border-slate-200/70 bg-[linear-gradient(180deg,#fbfdff_0%,#f4f8fd_100%)] p-5 shadow-[inset_0_1px_0_rgba(255,255,255,0.6)]">
+            <div className="flex flex-col gap-5 lg:flex-row lg:items-center lg:justify-between">
+              <div className="space-y-3">
+                <div className="inline-flex items-center rounded-full bg-slate-950 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.28em] text-white/90">
+                  Add files
+                </div>
+                <h3 className="text-3xl font-semibold tracking-[-0.05em] text-slate-950">
+                  Drop images here
+                </h3>
+                <p className="max-w-2xl text-sm leading-7 text-slate-600">
+                  Drag and drop or choose files to start your batch.
+                </p>
               </div>
-            </div>
 
-            <div className="rounded-[1.5rem] border border-slate-200/70 bg-slate-50/85 p-4">
-              <p className="text-sm font-medium text-slate-900">Quick actions</p>
-              <div className="mt-4 flex flex-wrap gap-3">
+              <div className="flex flex-wrap gap-3">
                 <button
-                  className="rounded-full bg-slate-950 px-5 py-3 text-sm font-medium text-white transition hover:bg-slate-800"
+                  className="rounded-full bg-[linear-gradient(135deg,#020617_0%,#111827_100%)] px-6 py-3 text-sm font-medium text-white shadow-[0_12px_24px_rgba(15,23,42,0.16)] transition hover:scale-[1.01] hover:bg-slate-800"
                   onClick={() => inputRef.current?.click()}
                   type="button"
                 >
                   Choose images
                 </button>
                 <button
-                  className="rounded-full border border-slate-300 px-5 py-3 text-sm font-medium text-slate-700 transition hover:border-slate-400 hover:bg-white"
+                  className="rounded-full border border-slate-300 bg-white px-5 py-3 text-sm font-medium text-slate-700 transition hover:border-slate-400 hover:bg-slate-50"
                   onClick={resetWorkspace}
                   type="button"
                 >
@@ -544,7 +537,7 @@ export default function ImageOptimizer() {
             </p>
           ) : null}
 
-          <div className="mt-6 rounded-[1.5rem] border border-slate-200/70 bg-slate-50/90 p-4">
+          <div className="mt-6 rounded-[1.5rem] border border-slate-200/70 bg-white/88 p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.65)]">
             <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
               <div className="grid gap-3 sm:grid-cols-3 sm:gap-4">
                 <div>
@@ -573,7 +566,7 @@ export default function ImageOptimizer() {
 
               <div className="flex flex-wrap gap-3">
                 <button
-                  className="rounded-full bg-sky-600 px-5 py-3 text-sm font-medium text-white transition hover:bg-sky-500 disabled:cursor-not-allowed disabled:bg-sky-300"
+                  className="rounded-full bg-[linear-gradient(135deg,#38bdf8_0%,#67e8f9_100%)] px-6 py-3 text-sm font-medium text-slate-950 shadow-[0_14px_28px_rgba(56,189,248,0.22)] transition hover:scale-[1.01] disabled:cursor-not-allowed disabled:opacity-60"
                   disabled={items.length === 0 || isProcessing}
                   onClick={() => void runCompression()}
                   type="button"
@@ -581,7 +574,7 @@ export default function ImageOptimizer() {
                   {isProcessing ? "Compressing..." : "Compress images"}
                 </button>
                 <button
-                  className="rounded-full border border-slate-300 bg-white px-5 py-3 text-sm font-medium text-slate-700 transition hover:border-slate-400 hover:bg-white disabled:cursor-not-allowed disabled:opacity-50"
+                  className="rounded-full border border-slate-300 bg-white px-5 py-3 text-sm font-medium text-slate-700 transition hover:border-slate-400 hover:bg-slate-50 disabled:cursor-not-allowed disabled:opacity-50"
                   disabled={!items.some((item) => item.compressedFile)}
                   onClick={() => void downloadAllAsZip()}
                   type="button"
@@ -601,7 +594,7 @@ export default function ImageOptimizer() {
 
         <section className="grid gap-4">
           {items.length === 0 ? (
-            <div className="rounded-[1.75rem] border border-white/70 bg-white/78 p-12 text-center shadow-[0_16px_50px_rgba(15,23,42,0.08)] backdrop-blur">
+            <div className="rounded-[1.75rem] border border-white/80 bg-white/80 p-14 text-center shadow-[0_18px_55px_rgba(15,23,42,0.08)] backdrop-blur">
               <p className="text-lg font-medium text-slate-900">
                 Your results will appear here.
               </p>
@@ -613,7 +606,7 @@ export default function ImageOptimizer() {
 
           {items.map((item) => (
             <article
-              className="overflow-hidden rounded-[1.75rem] border border-white/70 bg-white/84 shadow-[0_16px_50px_rgba(15,23,42,0.08)] backdrop-blur"
+              className="overflow-hidden rounded-[1.75rem] border border-white/80 bg-white/86 shadow-[0_18px_55px_rgba(15,23,42,0.08)] backdrop-blur"
               key={item.id}
             >
               <div className="flex flex-col gap-5 p-5">
@@ -654,19 +647,19 @@ export default function ImageOptimizer() {
                 </div>
 
                 <div className="grid gap-3 sm:grid-cols-4">
-                  <div className="rounded-[1.2rem] border border-slate-200/70 bg-slate-50 px-4 py-3">
+                  <div className="rounded-[1.2rem] border border-slate-200/70 bg-[linear-gradient(180deg,#fbfdff_0%,#f6f9fd_100%)] px-4 py-3">
                     <p className="text-xs uppercase tracking-[0.16em] text-slate-500">Original</p>
                     <p className="mt-1 text-base font-semibold text-slate-900">
                       {formatBytes(item.originalSize)}
                     </p>
                   </div>
-                  <div className="rounded-[1.2rem] border border-slate-200/70 bg-slate-50 px-4 py-3">
+                  <div className="rounded-[1.2rem] border border-slate-200/70 bg-[linear-gradient(180deg,#fbfdff_0%,#f6f9fd_100%)] px-4 py-3">
                     <p className="text-xs uppercase tracking-[0.16em] text-slate-500">Optimized</p>
                     <p className="mt-1 text-base font-semibold text-slate-900">
                       {item.compressedSize ? formatBytes(item.compressedSize) : "--"}
                     </p>
                   </div>
-                  <div className="rounded-[1.2rem] border border-slate-200/70 bg-slate-50 px-4 py-3">
+                  <div className="rounded-[1.2rem] border border-emerald-200/70 bg-[linear-gradient(180deg,#f4fff9_0%,#edfcf4_100%)] px-4 py-3">
                     <p className="text-xs uppercase tracking-[0.16em] text-slate-500">Reduction</p>
                     <p className="mt-1 text-base font-semibold text-emerald-700">
                       {item.reductionPercent !== undefined
@@ -674,7 +667,7 @@ export default function ImageOptimizer() {
                         : "--"}
                     </p>
                   </div>
-                  <div className="rounded-[1.2rem] border border-slate-200/70 bg-slate-50 px-4 py-3">
+                  <div className="rounded-[1.2rem] border border-slate-200/70 bg-[linear-gradient(180deg,#fbfdff_0%,#f6f9fd_100%)] px-4 py-3">
                     <p className="text-xs uppercase tracking-[0.16em] text-slate-500">Format</p>
                     <p className="mt-1 text-base font-semibold text-slate-900">
                       {formatOutputType(item.outputType)}
@@ -683,11 +676,16 @@ export default function ImageOptimizer() {
                 </div>
 
                 <div className="grid gap-4 lg:grid-cols-2">
-                  <div className="rounded-[1.5rem] border border-slate-200/70 bg-slate-50 p-3">
-                    <p className="mb-3 text-sm font-medium text-slate-600">Original</p>
+                  <div className="rounded-[1.55rem] border border-slate-200/70 bg-[linear-gradient(180deg,#fbfdff_0%,#f6f9fd_100%)] p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.7)]">
+                    <div className="mb-3 flex items-center justify-between">
+                      <p className="text-sm font-medium text-slate-700">Original</p>
+                      <span className="rounded-full border border-slate-200 bg-white px-3 py-1 text-[11px] font-medium uppercase tracking-[0.18em] text-slate-500">
+                        Before
+                      </span>
+                    </div>
                     <Image
                       alt={`Original preview for ${item.name}`}
-                      className="h-64 w-full rounded-[1.1rem] object-cover"
+                      className="h-64 w-full rounded-[1.2rem] object-cover shadow-[0_10px_24px_rgba(15,23,42,0.08)]"
                       height={item.dimensions.height}
                       unoptimized
                       src={item.originalUrl}
@@ -695,24 +693,53 @@ export default function ImageOptimizer() {
                     />
                   </div>
 
-                  <div className="rounded-[1.5rem] bg-[linear-gradient(160deg,#0f172a_0%,#16233d_100%)] p-3 text-white">
-                    <p className="mb-3 text-sm font-medium text-slate-300">Optimized</p>
+                  <div className="rounded-[1.55rem] bg-[linear-gradient(160deg,#0f172a_0%,#16233d_70%,#164e63_130%)] p-4 text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.05)]">
+                    <div className="mb-3 flex items-center justify-between">
+                      <p className="text-sm font-medium text-slate-200">Optimized</p>
+                      <span className="rounded-full border border-white/12 bg-white/6 px-3 py-1 text-[11px] font-medium uppercase tracking-[0.18em] text-slate-300">
+                        After
+                      </span>
+                    </div>
                     {item.compressedUrl ? (
                       <Image
                         alt={`Optimized preview for ${item.name}`}
-                        className="h-64 w-full rounded-[1.1rem] object-cover"
+                        className="h-64 w-full rounded-[1.2rem] object-cover shadow-[0_14px_30px_rgba(2,6,23,0.22)]"
                         height={item.dimensions.height}
                         unoptimized
                         src={item.compressedUrl}
                         width={item.dimensions.width}
                       />
                     ) : (
-                      <div className="flex h-64 items-center justify-center rounded-[1.1rem] border border-white/10 bg-white/5 text-sm text-slate-300">
-                        {item.status === "processing"
-                          ? "Compression in progress..."
-                          : item.status === "error"
-                            ? item.error
-                            : "Run compression to generate the optimized preview."}
+                      <div className="flex h-64 flex-col items-center justify-center rounded-[1.2rem] border border-white/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.05)_0%,rgba(255,255,255,0.02)_100%)] px-6 text-center">
+                        <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-2xl border border-white/10 bg-white/8 text-slate-200">
+                          <svg
+                            aria-hidden="true"
+                            className="h-5 w-5 stroke-current"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              d="M4 15.5V18a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2.5M8 10l4-4m0 0 4 4m-4-4v10"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth="1.8"
+                            />
+                          </svg>
+                        </div>
+                        <p className="text-base font-medium text-slate-100">
+                          {item.status === "processing"
+                            ? "Compression in progress"
+                            : item.status === "error"
+                              ? "Preview unavailable"
+                              : "Optimized preview pending"}
+                        </p>
+                        <p className="mt-2 max-w-xs text-sm leading-6 text-slate-300">
+                          {item.status === "processing"
+                            ? "Please wait while the optimized version is generated."
+                            : item.status === "error"
+                              ? item.error
+                              : "Run compression to generate the optimized image preview."}
+                        </p>
                       </div>
                     )}
                   </div>
